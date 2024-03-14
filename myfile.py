@@ -39,3 +39,17 @@ print("Accuracy {:.2f}%".format(accuracy*100))
 
 print("Confusion Matrix:\n",confusion_matrix(y_test,y_pred))
 print("\n Lassification report : \n", classification_report(y_test,y_pred))
+
+
+
+
+plt.figure(figsize=(8,6))
+sns.scatterplot(x=x_test[:,5],y=x_test[:,7],hue=y_test,palette={
+    0: 'blue',
+    1:'red'
+},marker='o')
+plt.xlabel("BMI")
+plt.ylabel("Age")
+plt.title("Logistic regression Decision Boundary \n Accuracy: {:.2f}%".format(accuracy*100))
+plt.legend(title="Diabetes",loc="upper right")
+plt.show()
